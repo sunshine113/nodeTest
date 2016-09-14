@@ -1,0 +1,167 @@
+/*
+
+.transparent_class {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   !*.transparent_class;*!
+    !*filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;*!
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+a {
+    color: #00B7FF;
+}
+
+#animate {
+    position: relative;
+    width: 100%;
+    margin-left: 300px;
+    perspective: 1000px;
+}
+
+.container {
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 200px;
+/ / 设置3d空间的原点在平面中心再向Z轴移动200px的位置
+}
+
+.img {
+    position: absolute;
+    line-height: 100px;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 50px;
+    background-color: red;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    !*过渡效果*!
+    !*transition: background-color 2s;*!
+}
+
+.animate {
+    animation: tramsform 2s;
+    animation-fill-mode: forwards;
+}
+.img :hover{
+    opacity: 0.5;
+}
+
+.img :nth-child(1) {
+    !*transform: ;*!
+    !*添加动画样式*!
+    !* animation: myfirst 5s;
+     -moz-animation: myfirst 5s;	!* Firefox *!
+     -webkit-animation: myfirst 5s;	!* Safari 和 Chrome *!
+     -o-animation: myfirst 5s;	!* Opera *!
+     animation-fill-mode: forwards ;*!
+}
+
+.img:nth-child(1) {
+    transform: rotateY(0deg)
+}
+
+.img:nth-child(2) {
+    transform: rotateY(60deg) translateZ(350px);
+}
+
+.img:nth-child(3) {
+    transform: rotateY(120deg) translateZ(350px);
+}
+
+.img:nth-child(4) {
+    transform: rotateY(180deg) translateZ(350px);
+}
+
+.img:nth-child(5) {
+    transform: rotateY(240deg) translateZ(350px);
+}
+
+.img:nth-child(6) {
+    transform: rotateY(300deg) translateZ(350px);
+}
+
+#title :hover {
+    !*background-color: chartreuse;*!
+    color: chartreuse;
+}
+
+@keyframes tramsform {
+    0% {
+        transform: translateZ(0)
+    }
+    100% {
+        transform: translateZ(200px)
+    }
+}
+
+@keyframes myfirst {
+
+    0% {
+        background-color: chartreuse;
+        left: 0px;
+    }
+    100% {
+        background-color: coral;
+        left: 400px;
+        transform: rotateY(45deg);
+    }
+    !*100% {background-color:yellow;left: 800px}*!
+
+}
+
+@-moz-keyframes myfirst !* Firefox *!
+{
+    0% {
+        background-color: chartreuse;
+        left: 0px;
+    }
+    100% {
+        background-color: coral;
+        left: 400px;
+        -moz-transform: rotateY(45deg);
+    }
+    !*100% {background-color:yellow;left: 800px}*!
+}
+
+@-webkit-keyframes myfirst !* Safari 和 Chrome *!
+{
+    0% {
+        background-color: chartreuse;
+        left: 0px;
+    }
+    100% {
+        background-color: coral;
+        left: 400px;
+        -webkit-transform: rotateY(45deg);
+    }
+    !*100% {background-color:yellow;left: 800px}*!
+}
+
+@-o-keyframes myfirst !* Opera *!
+{
+    0% {
+        background-color: chartreuse;
+        left: 0px
+    }
+    100% {
+        background-color: coral;
+        left: 400px
+    }
+    !*100% {background-color:yellow;left: 800px}*!
+}
+*/
