@@ -8,18 +8,56 @@ var app = require('../app');
 var debug = require('debug')('nodeTest:server');
 var http = require('http');
 
+//微信
+/**
+ * Created by tangxuelong on 15-10-16.
+ * validateToken
+ * 此文件只用于TOKEN验证
+ */
+var http = require('http');//内置http modoule
+var api = require('wechat');//npm wx
+var url = require("url");
+var crypto = require("crypto");
+//微信路径token验证
+function validate_token(req,res){
+  var query = url.parse(req.url, true).query;
+  var signature = query.signature;
+  console.log(query)
+  var timestamp =query.timestamp;
+  var nonce = query.nonce;
+  var echostr = query.echostr;
+  //1. 将token、timestamp、nonce三个参数进行字典序排序
+  var token = "sunshine"
+  var array = new Array(token,timestamp,nonce);
+  array.sort();
+  var str = array.toString().replace(/,/g,"");
+  //2. 将三个参数字符串拼接成一个字符串进行sha1加密
+  var sha1Code = crypto.createHash("sha1");
+  var code = sha1Code.update(str,'utf-8').digest("hex");
+  //3. 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信
+  if(code===signature){
+    res.end(echostr)
+  }else{
+    res.end("error");
+  }
+}
+//创建http服务器
+var server=http.createServer(function(req,res){
+  validate_token(req,res);
+})
+console.log('http server is running');
+
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
-
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -45,7 +83,6 @@ function normalizePort(val) {
     // port number
     return port;
   }
-
   return false;
 }
 
