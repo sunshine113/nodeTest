@@ -12,10 +12,7 @@ var wechat = require('wechat')
 
 //引用ejs模板
 var ejs = require("ejs");
-
-
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
